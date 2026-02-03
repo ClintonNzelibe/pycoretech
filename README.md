@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pycore Technologies Ltd — Company Website
 
-## Getting Started
+Official website for **Pycore Technologies Ltd**, a software development company focused on building scalable digital products for modern businesses.
 
-First, run the development server:
+This site serves as an informational and lead-generation platform, showcasing services, process, featured work, and providing a secure way for clients to contact the team.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Live Website
+**https://pycoretech.com**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧠 Overview
 
-## Learn More
+Pycore Technologies designs and develops:
 
-To learn more about Next.js, take a look at the following resources:
+- Web Applications
+- Mobile Applications
+- Backend Systems & APIs
+- Payments & Integrations
+- E-commerce Platforms
+- Admin Dashboards & Analytics
+- AI & Automation Tools
+- Cloud & DevOps Infrastructure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The website is intentionally lightweight, fast, and easy to maintain.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠 Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js (App Router)**
+- **React**
+- **TypeScript**
+- **CSS (Inline styles, no Tailwind dependency)**
+- **Vercel** (deployment)
+- **Hostinger** (domain)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ✨ Key Features
+
+### ✅ Informational Website
+- Professional landing page
+- Services overview
+- Process explanation
+- Testimonials & client trust sections
+- Featured project showcase
+
+### ✅ Contact System (No Database)
+- Contact form with name, email, phone, and message
+- Messages sent to:
+  - Admin inbox (`/admin/messages`)
+  - WhatsApp instantly
+- Designed for manual follow-up (call or reply later)
+
+### ✅ Admin Messages (Read-Only)
+- Password-protected admin page
+- View submitted contact messages
+- No editing or deleting (simple & secure)
+
+---
+
+## 🔐 Admin Access
+
+Admin messages are available at:
+
+
+Access is protected using an environment variable–based password.
+
+---
+
+## 🌍 Environment Variables
+
+Create a `.env.local` file in the project root with:
+
+```env
+ADMIN_PASSWORD=your-admin-password
+NEXT_PUBLIC_ADMIN_PASSWORD=your-admin-password
