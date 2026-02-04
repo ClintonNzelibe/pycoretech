@@ -4,6 +4,7 @@ import { useEffect,useState } from "react";
 
 
 
+
 export default function HomePage() {
   // Fade-up animation
   useEffect(() => {
@@ -69,201 +70,73 @@ export default function HomePage() {
   return (
     <>
 {/* ================= HERO ================= */}
-<section
-  style={{
-    background: "linear-gradient(180deg, #020617 0%, #0f172a 100%)",
-    padding: "140px 0",
-    fontFamily:
-      "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-  }}
->
-  <div
-    style={{
-      maxWidth: "1200px",
-      margin: "0 auto",
-      padding: "0 32px",
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-      gap: "64px",
-      alignItems: "center",
-    }}
-  >
-    {/* ===== LEFT: TEXT ===== */}
+<section className="bg-gradient-to-b from-[#020617] to-[#0f172a] py-20 md:py-32 font-inter">
+  <div className="max-w-6xl mx-auto px-4 md:px-8 grid gap-12 md:gap-16 md:grid-cols-2 items-center">
+    
+    {/* LEFT: TEXT */}
     <div>
-      <h1
-        style={{
-          fontSize: "56px",
-          fontWeight: 800,
-          lineHeight: 1.15,
-          marginBottom: "28px",
-          letterSpacing: "-0.02em",
-        }}
-      >
+      <h1 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
         We build reliable digital products
-        <br />
+        <br className="hidden md:block" />
         for growing businesses
       </h1>
 
-      <p
-        style={{
-          fontSize: "20px",
-          lineHeight: 1.75,
-          color: "#cbd5f5",
-          marginBottom: "44px",
-          maxWidth: "520px",
-          fontWeight: 400,
-        }}
-      >
+      <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-xl mb-8">
         Pycore Technologies designs and develops secure web and mobile
-        applications that help businesses operate efficiently,
-        scale confidently, and grow without technical friction.
+        applications that help businesses operate efficiently, scale
+        confidently, and grow without technical friction.
       </p>
 
       <a
         href="/contact"
-        style={{
-          display: "inline-block",
-          backgroundColor: "#a78bfa",
-          color: "#020617",
-          padding: "16px 42px",
-          borderRadius: "12px",
-          fontSize: "18px",
-          fontWeight: 600,
-          textDecoration: "none",
-        }}
+        className="inline-block bg-violet-400 text-slate-900 font-semibold text-base px-8 py-4 rounded-xl hover:bg-violet-300 transition"
       >
         Start a Project
       </a>
     </div>
 
-    {/* ===== RIGHT: VISUAL ===== */}
-    <div
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "420px",
-      }}
-    >
+    {/* RIGHT: VISUAL */}
+    <div className="w-full h-64 md:h-[420px]">
       <img
         src="/illustrations/hero3.svg"
         alt="Technology illustration"
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "contain",
-        }}
+        className="w-full h-full object-contain"
       />
     </div>
   </div>
 </section>
+
 {/* ================= WHAT WE BUILD ================= */}
 <section
   id="services"
-  style={{
-    backgroundColor: "#020617",
-    padding: "120px 0",
-    fontFamily:
-      "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-  }}
+  className="bg-[#020617] py-16 md:py-28 font-inter"
 >
-  <div
-    style={{
-      maxWidth: "1200px",
-      margin: "0 auto",
-      padding: "0 32px",
-    }}
-  >
-    <h2
-      style={{
-        fontSize: "40px",
-        fontWeight: 800,
-        marginBottom: "16px",
-        letterSpacing: "-0.02em",
-      }}
-    >
+  <div className="max-w-6xl mx-auto px-4 md:px-8">
+    <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-4">
       What We Build
     </h2>
 
-    <p
-      style={{
-        fontSize: "18px",
-        color: "#cbd5f5",
-        maxWidth: "720px",
-        marginBottom: "64px",
-        lineHeight: 1.75,
-        fontWeight: 400,
-      }}
-    >
+    <p className="text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed mb-12 md:mb-16">
       We design and engineer digital products that solve real business
-      problems from customer-facing applications to complex internal
+      problems—from customer-facing applications to complex internal
       systems built for performance, security, and growth.
     </p>
 
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-        gap: "32px",
-      }}
-    >
+    <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {services.map((item) => (
         <div
           key={item.title}
-          className="fade-up"
-          style={{
-            backgroundColor: "#020617",
-            border: "1px solid #1e293b",
-            borderRadius: "16px",
-            padding: "36px",
-            transition: "all 0.3s ease",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-8px)";
-            e.currentTarget.style.borderColor = "#a78bfa";
-            e.currentTarget.style.boxShadow =
-              "0 20px 40px rgba(167,139,250,0.2)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.borderColor = "#1e293b";
-            e.currentTarget.style.boxShadow = "none";
-          }}
+          className="group rounded-2xl border border-slate-800 bg-[#020617] p-6 md:p-8 transition hover:-translate-y-2 hover:border-violet-400 hover:shadow-[0_20px_40px_rgba(167,139,250,0.2)]"
         >
-          <div
-            style={{
-              width: "56px",
-              height: "56px",
-              borderRadius: "12px",
-              backgroundColor: "rgba(167,139,250,0.15)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "28px",
-              marginBottom: "20px",
-            }}
-          >
+          <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-violet-400/15 text-2xl">
             {item.icon}
           </div>
 
-          <h3
-            style={{
-              fontSize: "20px",
-              fontWeight: 700,
-              marginBottom: "12px",
-              letterSpacing: "-0.01em",
-            }}
-          >
+          <h3 className="text-lg font-bold tracking-tight mb-2">
             {item.title}
           </h3>
 
-          <p
-            style={{
-              color: "#cbd5f5",
-              lineHeight: 1.65,
-              fontSize: "16px",
-              fontWeight: 400,
-            }}
-          >
+          <p className="text-sm md:text-base text-slate-300 leading-relaxed">
             {item.desc}
           </p>
         </div>
@@ -273,39 +146,13 @@ export default function HomePage() {
 </section>
 
 {/* ================= HOW WE WORK ================= */}
-<section
-  style={{
-    backgroundColor: "#020617",
-    padding: "120px 0",
-    fontFamily:
-      "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-  }}
->
-  <div
-    style={{
-      maxWidth: "1200px",
-      margin: "0 auto",
-      padding: "0 32px",
-    }}
-  >
-    <h2
-      style={{
-        fontSize: "40px",
-        fontWeight: 800,
-        marginBottom: "64px",
-        letterSpacing: "-0.02em",
-      }}
-    >
+<section className="bg-[#020617] py-16 md:py-28 font-inter">
+  <div className="max-w-6xl mx-auto px-4 md:px-8">
+    <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-10 md:mb-16">
       How We Work
     </h2>
 
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-        gap: "40px",
-      }}
-    >
+    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
       {[
         [
           "01",
@@ -328,38 +175,19 @@ export default function HomePage() {
           "We deploy, monitor, and support your product to ensure stability and long-term growth.",
         ],
       ].map(([step, title, desc]) => (
-        <div key={step} className="fade-up">
-          <div
-            style={{
-              color: "#a78bfa",
-              fontSize: "28px",
-              fontWeight: 800,
-              marginBottom: "14px",
-              letterSpacing: "-0.01em",
-            }}
-          >
+        <div
+          key={step}
+          className="rounded-2xl border border-slate-800 bg-[#020617] p-6 md:p-8 transition hover:-translate-y-2 hover:border-violet-400"
+        >
+          <div className="text-violet-400 text-2xl font-extrabold mb-4">
             {step}
           </div>
 
-          <h3
-            style={{
-              fontSize: "20px",
-              fontWeight: 700,
-              marginBottom: "12px",
-              letterSpacing: "-0.01em",
-            }}
-          >
+          <h3 className="text-lg font-bold mb-2 tracking-tight">
             {title}
           </h3>
 
-          <p
-            style={{
-              color: "#cbd5f5",
-              lineHeight: 1.7,
-              fontSize: "16px",
-              fontWeight: 400,
-            }}
-          >
+          <p className="text-sm md:text-base text-slate-300 leading-relaxed">
             {desc}
           </p>
         </div>
@@ -368,131 +196,66 @@ export default function HomePage() {
   </div>
 </section>
 {/* ================= FEATURED PROJECT ================= */}
-<section
-  style={{
-    padding: "120px 0",
-    fontFamily:
-      "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-  }}
->
-  <div
-    style={{
-      maxWidth: "1200px",
-      margin: "0 auto",
-      padding: "0 32px",
-    }}
-  >
-    <h2
-      style={{
-        fontSize: "40px",
-        fontWeight: 800,
-        color: "#a78bfa",
-        marginBottom: "64px",
-        letterSpacing: "-0.02em",
-      }}
-    >
+<section className="bg-[#020617] py-16 md:py-28 font-inter">
+  <div className="max-w-6xl mx-auto px-4 md:px-8">
+    <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight text-violet-400 mb-10 md:mb-16">
       Featured Project
     </h2>
 
-    <div
-      className="fade-up"
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-        gap: "48px",
-        backgroundColor: "#020617",
-        padding: "48px",
-        borderRadius: "20px",
-      }}
-    >
-      <div style={{
-  background: "linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))",
-  border: "1px solid rgba(255,255,255,0.1)",
-  borderRadius: "20px",
-  height: "260px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  color: "#94a3b8",
-  fontSize: "14px",
-}}>
-  Live Project Preview
+    <div className="grid gap-10 md:grid-cols-2 items-center rounded-3xl border border-slate-800 bg-[#020617] p-6 md:p-10">
+      
+   {/* VISUAL: FADE SLIDESHOW */}
+<div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl border border-slate-700 bg-black">
+  <img
+    src="/projects/homes.png"
+    className="absolute inset-0 w-full h-full object-cover fade-slide delay-0"
+    alt="Homepage preview"
+  />
+  <img
+    src="/projects/services.png"
+    className="absolute inset-0 w-full h-full object-cover fade-slide delay-1"
+    alt="Services preview"
+  />
+  <img
+    src="/projects/about.png"
+    className="absolute inset-0 w-full h-full object-cover fade-slide delay-2"
+    alt="About preview"
+  />
 </div>
 
 
+      {/* CONTENT */}
       <div>
-        <h3
-          style={{
-            fontSize: "28px",
-            fontWeight: 700,
-            marginBottom: "20px",
-            letterSpacing: "-0.01em",
-          }}
-        >
+        <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-4">
           Ekenedilichukwu Global Concept Nig. Ltd
         </h3>
 
-        <p
-          style={{
-            color: "#cbd5f5",
-            fontSize: "18px",
-            marginBottom: "32px",
-            lineHeight: 1.75,
-            fontWeight: 400,
-          }}
-        >
+        <p className="text-sm md:text-base text-slate-300 leading-relaxed mb-6">
           A corporate business website designed and developed for a Nigerian
-          services company, focused on Electrical, security, solar, and interior solutions, design,
-          and a professional online presence.
+          services company focused on electrical, security, solar, and interior
+          solutions, delivering a professional and credible online presence.
         </p>
 
         <a
           href="https://ekenedilichukwuglobalconceptngltd.com/"
           target="_blank"
-          style={{
-            display: "inline-block",
-            backgroundColor: "#a78bfa",
-            color: "#020617",
-            padding: "14px 34px",
-            borderRadius: "12px",
-            fontWeight: 600,
-            textDecoration: "none",
-          }}
+          className="inline-flex items-center gap-2 bg-violet-400 text-slate-900 font-semibold px-6 py-3 rounded-xl hover:bg-violet-300 transition"
         >
           View Live Project
+          <span>→</span>
         </a>
       </div>
     </div>
   </div>
 </section>
 {/* ================= TESTIMONIALS ================= */}
-<section
-  style={{
-    padding: "120px 0",
-    backgroundColor: "#020617",
-    fontFamily:
-      "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-  }}
->
-  <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 32px" }}>
-    <h2
-      style={{
-        fontSize: "40px",
-        fontWeight: 800,
-        marginBottom: "64px",
-        letterSpacing: "-0.02em",
-      }}
-    >
+<section className="bg-[#020617] py-16 md:py-28 font-inter">
+  <div className="max-w-6xl mx-auto px-4 md:px-8">
+    <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-10 md:mb-16 text-violet-400">
       What Clients Say
     </h2>
 
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-        gap: "32px",
-      }}
-    >
+    <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {[
         {
           name: "Ekenedilichukwu Global Concept",
@@ -502,101 +265,43 @@ export default function HomePage() {
         },
         {
           name: "Uchenna Uzoagbado",
-          role: " Manager",
+          role: "Manager",
           text:
             "They understand scalable architecture and clean systems. Our backend and admin dashboard were delivered on time and built with long-term growth in mind.",
         },
         {
           name: "Ifeoma Okonkwo",
-          role: "C.E.O of Cash4us groups",
+          role: "C.E.O of Cash4us Groups",
           text:
             "Professional, reliable, and technically solid. Pycore helped us seamlessly integrate payments and streamline critical workflows without any disruption.",
         },
       ].map((item, i) => (
         <div
           key={i}
-          className="fade-up"
-          style={{
-            position: "relative",
-            border: "1px solid #1e293b",
-            borderTop: "3px solid #a78bfa",
-            borderRadius: "16px",
-            padding: "36px",
-            backgroundColor: "#020617",
-            transition: "transform 0.3s ease, box-shadow 0.3s ease",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "translateY(-6px)";
-            e.currentTarget.style.boxShadow =
-              "0 20px 40px rgba(167,139,250,0.15)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow = "none";
-          }}
+          className="relative rounded-2xl border border-slate-800 bg-[#020617] p-6 md:p-8 transition hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(167,139,250,0.15)]"
         >
-          {/* Quote Icon */}
-          <div
-            style={{
-              position: "absolute",
-              top: "24px",
-              right: "24px",
-              fontSize: "48px",
-              color: "rgba(167,139,250,0.15)",
-              lineHeight: 1,
-            }}
-          >
+          {/* Quote mark */}
+          <div className="absolute top-6 right-6 text-5xl leading-none text-violet-400/20">
             “
           </div>
 
-          <p
-            style={{
-              color: "#cbd5f5",
-              fontSize: "17px",
-              lineHeight: 1.75,
-              marginBottom: "32px",
-              fontWeight: 400,
-            }}
-          >
+          <p className="text-sm md:text-base text-slate-300 leading-relaxed mb-6">
             {item.text}
           </p>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <div className="flex items-center gap-4">
             {/* Avatar */}
-            <div
-              style={{
-                width: "44px",
-                height: "44px",
-                borderRadius: "50%",
-                backgroundColor: "rgba(167,139,250,0.2)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontWeight: 700,
-                color: "#a78bfa",
-              }}
-            >
+            <div className="h-11 w-11 rounded-full bg-violet-400/20 flex items-center justify-center font-bold text-violet-400">
               {item.name.charAt(0)}
             </div>
 
             <div>
-              <strong
-                style={{
-                  display: "block",
-                  fontWeight: 600,
-                  letterSpacing: "-0.01em",
-                }}
-              >
+              <div className="font-semibold tracking-tight">
                 {item.name}
-              </strong>
-              <span
-                style={{
-                  color: "#94a3b8",
-                  fontSize: "14px",
-                }}
-              >
+              </div>
+              <div className="text-sm text-slate-400">
                 {item.role}
-              </span>
+              </div>
             </div>
           </div>
         </div>
@@ -605,58 +310,22 @@ export default function HomePage() {
   </div>
 </section>
 
-{/* ================= IDEAL CLIENTS ================= */}
-<section
-  style={{
-    padding: "120px 0",
-    backgroundColor: "#020617",
-    fontFamily:
-      "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-  }}
->
-  <div
-    style={{
-      maxWidth: "1200px",
-      margin: "0 auto",
-      padding: "0 32px",
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-      gap: "64px",
-      alignItems: "center",
-    }}
-  >
-    {/* ===== LEFT: TEXT ===== */}
-    <div>
-      <h2
-        style={{
-          fontSize: "40px",
-          fontWeight: 800,
-          marginBottom: "24px",
-          letterSpacing: "-0.02em",
-        }}
-      >
+{/* ================= WHO WE WORK WITH ================= */}
+<section className="bg-[#020617] py-16 md:py-28 font-inter">
+  <div className="max-w-6xl mx-auto px-4 md:px-8 grid gap-12 md:gap-16 md:grid-cols-2 items-center">
+    
+    {/* LEFT: TEXT (Fix 4 applied) */}
+    <div className="mt-0 md:mt-16">
+      <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight mb-6 ">
         Who We Work With
       </h2>
 
-      <p
-        style={{
-          color: "#cbd5f5",
-          fontSize: "18px",
-          lineHeight: 1.75,
-          marginBottom: "32px",
-          fontWeight: 400,
-        }}
-      >
-        We partner with teams and businesses that view technology as a
-        strategic asset  not just a short-term solution.
+      <p className="text-base md:text-lg text-slate-300 leading-relaxed mb-8">
+        We partner with teams and businesses that view technology as a strategic
+        asset — not just a short-term solution.
       </p>
 
-      <div
-        style={{
-          display: "grid",
-          gap: "16px",
-        }}
-      >
+      <div className="grid gap-4">
         {[
           "Startups building MVPs or scaling existing products",
           "Small and medium businesses improving digital operations",
@@ -666,17 +335,7 @@ export default function HomePage() {
         ].map((item, i) => (
           <div
             key={i}
-            className="fade-up"
-            style={{
-              padding: "14px 18px",
-              borderRadius: "10px",
-              border: "1px solid #1e293b",
-              color: "#cbd5f5",
-              backgroundColor: "#020617",
-              fontSize: "16px",
-              lineHeight: 1.6,
-              fontWeight: 400,
-            }}
+            className="rounded-xl border border-slate-800 bg-[#020617] px-4 py-3 text-sm md:text-base text-slate-300"
           >
             {item}
           </div>
@@ -684,193 +343,87 @@ export default function HomePage() {
       </div>
     </div>
 
-    {/* ===== RIGHT: IMAGES ===== */}
-    <div
-      className="fade-up"
-      style={{
-        position: "relative",
-        width: "100%",
-        height: "420px",
-      }}
-    >
-      {/* Main image */}
+    {/* RIGHT: IMAGES */}
+    <div className="relative w-full h-56 md:h-[420px]">
+      
+      {/* MAIN IMAGE (Fix 2 applied) */}
       <img
         src="https://images.unsplash.com/photo-1573164574511-73c773193279"
         alt="Team collaboration"
-        style={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          borderRadius: "20px",
-          border: "1px solid #1e293b",
-        }}
+        className="w-full h-full object-cover rounded-2xl border border-slate-800"
       />
 
-      {/* Accent image */}
+      {/* ACCENT IMAGE (Fix 3 applied) */}
       <img
         src="https://images.unsplash.com/photo-1590650153855-d9e808231d41"
         alt="Planning and strategy"
-        style={{
-          position: "absolute",
-          bottom: "-32px",
-          right: "-32px",
-          width: "180px",
-          height: "120px",
-          objectFit: "cover",
-          borderRadius: "16px",
-          border: "1px solid #1e293b",
-          backgroundColor: "#020617",
-        }}
+        className="hidden md:block absolute bottom-[-32px] right-[-32px] w-[180px] h-[120px] object-cover rounded-xl border border-slate-800 bg-[#020617]"
       />
     </div>
   </div>
 </section>
-
 {/* ================= WHY CHOOSE PYCORE ================= */}
-<section
-  style={{
-    padding: "120px 0",
-    backgroundColor: "#020617",
-    fontFamily:
-      "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-  }}
->
-  <div
-    style={{
-      maxWidth: "1200px",
-      margin: "0 auto",
-      padding: "0 32px",
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-      gap: "64px",
-      alignItems: "center",
-    }}
-  >
-    {/* ===== LEFT CONTENT ===== */}
+<section className="bg-[#020617] py-16 md:py-28 font-inter">
+  <div className="max-w-6xl mx-auto px-4 md:px-8 grid gap-12 md:gap-16 md:grid-cols-2 items-center">
+    
+    {/* LEFT: STATEMENT */}
     <div>
-      <h2
-        style={{
-          fontSize: "40px",
-          fontWeight: 800,
-          marginBottom: "24px",
-          letterSpacing: "-0.02em",
-        }}
-      >
+      <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight text-violet-400 mb-6">
         Why Choose Pycore
       </h2>
 
-      <p
-        style={{
-          fontSize: "18px",
-          color: "#cbd5f5",
-          lineHeight: 1.75,
-          marginBottom: "24px",
-          fontWeight: 400,
-        }}
-      >
-        We don’t just deliver features, we build systems that are reliable,
+      <p className="text-base md:text-lg text-slate-300 leading-relaxed mb-5">
+        We don’t just deliver features — we build systems that are reliable,
         secure, and designed to grow alongside your business.
       </p>
 
-      <p
-        style={{
-          fontSize: "18px",
-          color: "#cbd5f5",
-          lineHeight: 1.75,
-          fontWeight: 400,
-        }}
-      >
-        Our focus is long-term value, clear thinking, and engineering
-        decisions that won’t hold you back in the future.
+      <p className="text-base md:text-lg text-slate-300 leading-relaxed">
+        Our focus is long-term value, clear thinking, and engineering decisions
+        that won’t hold you back as your product scales.
       </p>
     </div>
 
-    {/* ===== RIGHT PILLARS ===== */}
-    <div
-      style={{
-        display: "grid",
-        gap: "24px",
-      }}
-    >
+    {/* RIGHT: PILLARS */}
+    <div className="grid gap-4 md:gap-5">
       {[
         [
-          "01",
           "Production-First Engineering",
           "We build for real users, real traffic, and real business demands from day one.",
         ],
         [
-          "02",
           "Scalable Architecture",
           "Systems are designed to adapt and expand without costly rewrites.",
         ],
         [
-          "03",
           "Security by Design",
           "Security is built into every layer, not added as an afterthought.",
         ],
         [
-          "04",
           "Clear Communication",
           "We explain technical decisions in straightforward, honest language.",
         ],
         [
-          "05",
           "Long-Term Partnership",
           "We stay involved beyond launch to support improvements and growth.",
         ],
-      ].map(([num, title, desc]) => (
+      ].map(([title, desc], i) => (
         <div
-          key={num}
-          className="fade-up"
-          style={{
-            display: "flex",
-            gap: "20px",
-            padding: "24px",
-            borderRadius: "16px",
-            border: "1px solid #1e293b",
-            backgroundColor: "#020617",
-          }}
+          key={i}
+          className="rounded-2xl border border-slate-800 bg-[#020617] p-5 md:p-6 hover:border-violet-400 transition"
         >
-          <div
-            style={{
-              fontSize: "24px",
-              fontWeight: 800,
-              color: "#a78bfa",
-              minWidth: "40px",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            {num}
-          </div>
-
-          <div>
-            <h3
-              style={{
-                fontSize: "18px",
-                fontWeight: 700,
-                marginBottom: "6px",
-                letterSpacing: "-0.01em",
-              }}
-            >
-              {title}
-            </h3>
-
-            <p
-              style={{
-                color: "#cbd5f5",
-                lineHeight: 1.65,
-                fontSize: "16px",
-                fontWeight: 400,
-              }}
-            >
-              {desc}
-            </p>
-          </div>
+          <h3 className="font-semibold tracking-tight mb-1 text-white">
+            {title}
+          </h3>
+          <p className="text-sm md:text-base text-slate-300 leading-relaxed">
+            {desc}
+          </p>
         </div>
       ))}
     </div>
   </div>
 </section>
+
+
 {/* ================= PRICING PHILOSOPHY ================= */}
 <section
   style={{
@@ -891,6 +444,45 @@ export default function HomePage() {
       alignItems: "center",
     }}
   >
+      {/* ===== LEFT: STATEMENT ===== */}
+    <div>
+      <h2
+        style={{
+          fontSize: "40px",
+          fontWeight: 800,
+          marginBottom: "24px",
+          letterSpacing: "-0.02em",
+        }}
+      >
+        Pricing Philosophy
+      </h2>
+
+      <p
+        style={{
+          fontSize: "18px",
+          color: "#cbd5f5",
+          lineHeight: 1.75,
+          marginBottom: "24px",
+          fontWeight: 400,
+        }}
+      >
+        We don’t price projects based on shortcuts or assumptions. Our pricing
+        reflects careful planning, sound engineering decisions, and long-term
+        reliability.
+      </p>
+
+      <p
+        style={{
+          fontSize: "18px",
+          color: "#cbd5f5",
+          lineHeight: 1.75,
+          fontWeight: 400,
+        }}
+      >
+        Every project is scoped individually to ensure it is built properly 
+        not rushed.
+      </p>
+    </div>
     {/* ===== RIGHT: PRICING PRINCIPLES ===== */}
     <div
       style={{
@@ -951,75 +543,21 @@ export default function HomePage() {
       ))}
     </div>
 
-    {/* ===== LEFT: STATEMENT ===== */}
-    <div>
-      <h2
-        style={{
-          fontSize: "40px",
-          fontWeight: 800,
-          marginBottom: "24px",
-          letterSpacing: "-0.02em",
-        }}
-      >
-        Pricing Philosophy
-      </h2>
-
-      <p
-        style={{
-          fontSize: "18px",
-          color: "#cbd5f5",
-          lineHeight: 1.75,
-          marginBottom: "24px",
-          fontWeight: 400,
-        }}
-      >
-        We don’t price projects based on shortcuts or assumptions. Our pricing
-        reflects careful planning, sound engineering decisions, and long-term
-        reliability.
-      </p>
-
-      <p
-        style={{
-          fontSize: "18px",
-          color: "#cbd5f5",
-          lineHeight: 1.75,
-          fontWeight: 400,
-        }}
-      >
-        Every project is scoped individually to ensure it is built properly 
-        not rushed.
-      </p>
-    </div>
+  
   </div>
 </section>
 {/* ================= FAQs ================= */}
-<section
-  style={{
-    padding: "120px 0",
-    backgroundColor: "#020617",
-    fontFamily:
-      "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-  }}
->
-  <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 32px" }}>
-    <h2
-      style={{
-        fontSize: "40px",
-        fontWeight: 800,
-        marginBottom: "64px",
-        letterSpacing: "-0.02em",
-      }}
-    >
+<section className="bg-[#020617] py-16 md:py-28 font-inter">
+  <div className="max-w-6xl mx-auto px-4 md:px-8">
+    
+    {/* HEADER */}
+    <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight text-violet-400 mb-10 md:mb-16">
       Frequently Asked Questions
     </h2>
 
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-        gap: "32px",
-      }}
-    >
+    <div className="grid gap-6 md:gap-8 md:grid-cols-2">
+      
+      {/* FAQ ITEMS */}
       {[
         [
           "How long does a typical project take?",
@@ -1040,31 +578,12 @@ export default function HomePage() {
       ].map(([question, answer], i) => (
         <div
           key={i}
-          className="fade-up"
-          style={{
-            padding: "28px",
-            borderRadius: "16px",
-            border: "1px solid #1e293b",
-            backgroundColor: "#020617",
-          }}
+          className="rounded-2xl border border-slate-800 bg-[#020617] p-5 md:p-6"
         >
-          <h3
-            style={{
-              fontSize: "18px",
-              fontWeight: 700,
-              marginBottom: "12px",
-              letterSpacing: "-0.01em",
-            }}
-          >
+          <h3 className="font-semibold tracking-tight mb-2">
             {question}
           </h3>
-          <p
-            style={{
-              color: "#cbd5f5",
-              lineHeight: 1.65,
-              fontSize: "16px",
-            }}
-          >
+          <p className="text-sm md:text-base text-slate-300 leading-relaxed">
             {answer}
           </p>
         </div>
@@ -1075,62 +594,28 @@ export default function HomePage() {
         href="https://wa.me/2347034522313"
         target="_blank"
         rel="noopener noreferrer"
-        className="fade-up"
-        style={{
-          gridColumn: "span 2", // 👈 THIS IS THE ONLY CHANGE
-          padding: "32px",
-          borderRadius: "16px",
-          border: "1px solid #1e293b",
-          background:
-            "linear-gradient(135deg, rgba(34,197,94,0.15), rgba(2,6,23,1))",
-          textDecoration: "none",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
+        className="md:col-span-2 rounded-2xl border border-slate-800 bg-gradient-to-br from-violet-400/20 to-[#020617] p-6 md:p-8 flex flex-col justify-between hover:border-violet-400 transition"
       >
-        <div style={{ fontSize: "36px", marginBottom: "16px" }}>💬</div>
+        <div>
+          <div className="text-3xl mb-4">💬</div>
+          <h3 className="text-lg md:text-xl font-extrabold tracking-tight mb-2">
+            Still have questions?
+          </h3>
+          <p className="text-sm md:text-base text-slate-300 leading-relaxed">
+            Chat directly with us on WhatsApp and get fast, clear answers about
+            your project.
+          </p>
+        </div>
 
-        <h3
-          style={{
-            fontSize: "20px",
-            fontWeight: 800,
-            marginBottom: "12px",
-            letterSpacing: "-0.01em",
-          }}
-        >
-          Still have questions?
-        </h3>
-
-        <p
-          style={{
-            color: "#cbd5f5",
-            fontSize: "16px",
-            lineHeight: 1.6,
-            marginBottom: "20px",
-          }}
-        >
-          Chat directly with us on WhatsApp and get fast, clear answers about your
-          project.
-        </p>
-
-        <span
-          style={{
-            alignSelf: "flex-start",
-            padding: "12px 18px",
-            borderRadius: "10px",
-            backgroundColor: "#22c55e",
-            color: "#020617",
-            fontWeight: 700,
-            fontSize: "15px",
-          }}
-        >
+        <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-xl bg-violet-400 px-5 py-3 font-semibold text-slate-900">
           Chat on WhatsApp →
         </span>
       </a>
+
     </div>
   </div>
 </section>
+
 
 
 {/* ================= CLIENTS ================= */}
@@ -1240,6 +725,42 @@ export default function HomePage() {
     </a>
   </div>
 </section>
+<style jsx global>{`
+  @keyframes fadeSlide {
+    0% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    30% {
+      opacity: 1;
+    }
+    35% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .fade-slide {
+    animation: fadeSlide 15s infinite;
+  }
+
+  .delay-0 {
+    animation-delay: 0s;
+  }
+
+  .delay-1 {
+    animation-delay: 5s;
+  }
+
+  .delay-2 {
+    animation-delay: 10s;
+  }
+`}</style>
+
 
 
 

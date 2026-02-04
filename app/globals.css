@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Brand Colors */
 :root {
@@ -121,10 +119,11 @@ body {
 }
 
 @media (max-width: 768px) {
-  section {
-    padding: 64px 0 !important;
+  section.legacy-section {
+    padding: 64px 0;
   }
 }
+
 @media (max-width: 768px) {
   a[style*="grid-column"] {
     grid-column: span 1 !important;
