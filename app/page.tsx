@@ -76,9 +76,7 @@ export default function HomePage() {
     {/* LEFT: TEXT */}
     <div>
       <h1 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">
-        We build reliable digital products
-        <br className="hidden md:block" />
-        for growing businesses
+        We build reliable digital products for growing businesses
       </h1>
 
       <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-xl mb-8">
