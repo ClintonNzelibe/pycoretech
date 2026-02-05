@@ -7,21 +7,30 @@ export default function AdminMessagesPage() {
   const [authorized, setAuthorized] = useState(false);
 
   useEffect(() => {
-    const password = prompt(
-        "Enter admin password\n\nDEBUG: " +
+  const password = prompt("Enter admin password");
 
-        String(process.env.NEXT_PUBLIC_ADMIN_PASSWORD)
-    );
+  if (!password) return;
 
-    if (password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
+  fetch("/api/admin-auth", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ password }),
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Unauthorized");
+      return res.json();
+    })
+    .then(() => {
       setAuthorized(true);
       fetch("/api/messages")
         .then((res) => res.json())
         .then(setMessages);
-    } else {
+    })
+    .catch(() => {
       alert("Unauthorized");
-    }
-  }, []);
+    });
+}, []);
+
 
   if (!authorized) return null;
 
