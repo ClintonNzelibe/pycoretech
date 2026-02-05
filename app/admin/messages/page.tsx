@@ -7,7 +7,11 @@ export default function AdminMessagesPage() {
   const [authorized, setAuthorized] = useState(false);
 
   useEffect(() => {
-    const password = prompt("Enter admin password");
+    const password = prompt(
+        "Enter admin password\n\nDEBUG: " +
+
+        String(process.env.NEXT_PUBLIC_ADMIN_PASSWORD)
+    );
 
     if (password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
       setAuthorized(true);
